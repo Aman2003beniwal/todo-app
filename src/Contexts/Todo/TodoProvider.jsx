@@ -34,8 +34,8 @@ function TodoProvider({ children }) {
   };
 
   useEffect(() => {
-    todoList.length > 0 &&
-      localStorage.setItem("todo_list", JSON.stringify(todoList));
+    // todoList.length > 0 && //This condition (todoList.length > 0) means the localStorage update will only happen if the todoList has items. If the list becomes empty after deletion, the localStorage won't be updated, and the old data will persist.
+    localStorage.setItem("todo_list", JSON.stringify(todoList));
   }, [todoList]);
 
   return (

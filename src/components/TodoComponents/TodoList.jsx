@@ -10,11 +10,7 @@ function TodoList() {
   const [inputValue, setInputValue] = useState("");
 
   const handleDelete = (id) => {
-    if (!id) {
-      alert("You not allow to perfom this action");
-    } else {
-      deleteTodo(id);
-    }
+    deleteTodo(id);
   };
 
   const handleEdit = (id) => {
@@ -26,7 +22,7 @@ function TodoList() {
   };
 
   const handleCheckBox = (id) => {
-    completeTodo(id)
+    completeTodo(id);
   };
 
   return (
@@ -55,7 +51,11 @@ function TodoList() {
                 </>
               ) : (
                 <>
-                  <li className= {`list-group-item ${data.complete ? "text-decoration-line-through" : ""}`}>
+                  <li
+                    className={`list-group-item ${
+                      data.complete ? "text-decoration-line-through" : ""
+                    }`}
+                  >
                     <span>
                       <input
                         type="checkbox"
